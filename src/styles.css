@@ -1,0 +1,162 @@
+@font-face {
+  font-family: "hn";
+  src: url("helveticaneuelt-webfont.woff") format("woff");
+  letter-spacing: 1px !important;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", "Calibri", Helvetica, Arial;
+  text-shadow: none !important;
+}
+
+body {
+  font-family: "Helvetica Neue";
+}
+
+.backgroundImage {
+  background-color: #A6C238;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*z-index: 0;*/
+  top: 0;
+  height: 50%;
+}
+
+.loginIconContainer {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+}
+
+.loginIcon {
+  color: #000000;
+  font-size: 60px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.labelColor {
+  color: #000000;
+}
+
+.labelFontSize {
+  font-size: 16px;
+}
+
+.eyeIcon:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mat-card-header-text {
+  margin: 0 !important;
+  font-weight: normal !important;
+}
+
+.mat-focused .mat-form-field-label {
+  /*change color of label*/
+
+  font-size: 16px;
+}
+
+.submitBtn:hover {
+  opacity: 0.8;
+}
+
+.submitBtn {
+  background-color: #A6C238;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 20px;
+  color: black !important;
+  font-weight: bolder !important;
+}
+
+.sectionBackground {
+  background-color: #fff !important;
+}
+
+.footer {
+  background-color: #A6C238;
+  color: black;
+  position: fixed;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  /*z-index: 1;*/
+  font-size: 12px;
+  font-weight: bolder
+}
+
+.mat-form-field-label {
+  color: black !important;
+}
+
+.mat-form-field-underline {
+  background-color: #A6C238 !important;
+  height: 1px !important;
+}
+
+.btnColorClass {
+  /*box-shadow: 0 -2px 5px -2px !important;*/
+  /*border-radius: 20px !important;*/
+  background-color: #A6C238 !important;
+  color: black !important;
+  font-weight: bolder !important;
+}
+
+.matFields {
+  width: 200px;
+}
+
+.headline3 {
+  border-bottom: 3px solid #A6C238;
+  margin-bottom: 26px;
+  position: relative;
+}
+
+.headline3:before,
+.headline3:after {
+  content: '';
+  border-right: 20px solid transparent;
+  border-top: 15px solid #A6C238;
+  bottom: -15px;
+  position: absolute;
+  left: 25px;
+}
+
+.headline3:after {
+  border-top-color: #ffffff;
+  border-right-color: transparent;
+  bottom: -13px;
+  left: 26px;
+}
+
+.button {
+  margin-bottom: 8px;
+}
+
+
+.headerButtonMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  width: 100%;
+  font-size: 13px;
+  /*z-index: 102;*/
+  font-weight: normal;
+  background-color: #F4F5F7;
+  color: #000000;
+}
+
+.mat-snack-bar-container.snackBarWarning {
+  color: white;
+  background-color: #FF8800;
+}
