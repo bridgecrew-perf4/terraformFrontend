@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Login</title>
+</head>
+<body>
+<div class="backgroundImage w-100 position-fixed d-block"></div>
+<form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && login(signUpForm)">
+  <div class="row m-0 p-0 min-vh-100 align-items-center contentContainer">
+    <div class="col-xs-12 col-sm-6 col-lg-4 p-0 mx-auto">
+      <div class="row m-0 p-0 d-flex justify-content-center  w-100">
+        <div class="loginIconContainer bg-white p-0">
+          <mat-icon class="loginIcon">home</mat-icon>
+        </div>
+      </div>
+      <mat-card class="ml-3 mr-3 mt-2 shadow rounded">
+        <mat-card-content class="mt-4">
+          <mat-form-field class="w-100  mt-2">
+            <mat-label class="labelFontSize">Email</mat-label>
+            <span class="labelFontSize">
+              <input matInput type="text" #email="ngModel" [(ngModel)]='user.email' name="email" placeholder="Email"
+                     required [pattern]="emailRegex" [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
+            </span>
+<!--            <mat-icon matSuffix class="labelColor">email</mat-icon>-->
+          </mat-form-field>
+          <div *ngIf="signUpForm.submitted && email.errors">
+            <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+            <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+          </div>
+          <mat-form-field class="w-100 mt-2">
+            <mat-label class="labelFontSize">Password</mat-label>
+            <span class="labelFontSize">
+              <input matInput type="password" id="password" #password="ngModel"  [(ngModel)]='user.password' name="password" placeholder="Password"
+                     minlength="8" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+            </span>
+<!--            <mat-icon matSuffix class="eyeIcon labelColor" id="eyeIcon">remove_red_eye</mat-icon>-->
+          </mat-form-field>
+          <div *ngIf="signUpForm.submitted && password.errors">
+            <label *ngIf="password.errors.required" class="validation-message">This field is required.</label>
+            <label *ngIf="password.errors.minlength" class="validation-message">Enter atleast 4 characters.</label>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <div class="row m-0 p-0 d-flex justify-content-center w-100 mt-2 mb-4">
+        <div class="col-11 p-0 shadow-lg rounded">
+          <Input type="submit" id="loginBtn" class="p-0 w-100 text-black submitBtn" mat-raised-button
+                 value="Log In">
+          <!--          </Input>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</body>
+</html>

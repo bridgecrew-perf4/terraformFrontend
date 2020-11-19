@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>SignUp</title>
+</head>
+<body>
+<div class="backgroundImage w-100 position-fixed d-block"></div>
+<div class="row m-0 p-0 min-vh-100 align-items-center contentContainer">
+  <div class="col-xs-12 col-sm-6 col-lg-4 p-0 mx-auto">
+    <div class="row m-0 p-0 d-flex justify-content-center  w-100">
+      <div class="loginIconContainer bg-white p-0">
+        <mat-icon class="loginIcon">person</mat-icon>
+      </div>
+    </div>
+    <mat-card class="ml-3 mr-3 mt-2 shadow rounded">
+      <mat-card-content class="mt-4">
+        <mat-form-field class="w-100  mt-2">
+          <mat-label class="labelFontSize">Email</mat-label>
+          <span class="labelFontSize"><input matInput type="email" required [(ngModel)]='user.email' maxLength="50"
+                                             emailValidator></span>
+          <mat-icon matSuffix class="labelColor">email</mat-icon>
+        </mat-form-field>
+        <mat-form-field class="w-100 mt-2">
+          <mat-label class="labelFontSize">Password</mat-label>
+          <span class="labelFontSize"><input matInput type="password" #password required
+                                             [(ngModel)]='user.password'></span>
+          <mat-icon matSuffix class="eyeIcon labelColor" id="eyeIcon">remove_red_eye</mat-icon>
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+    <div class="row m-0 p-0 d-flex justify-content-center w-100 mt-2 mb-4">
+      <div class="col-11 p-0 shadow-lg rounded">
+        <button type="submit" id="loginBtn" class="p-0 w-100 text-black submitBtn" mat-raised-button (click)="signUp()">
+          <span>Register</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
