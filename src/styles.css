@@ -160,3 +160,13 @@ body {
   color: white;
   background-color: #FF8800;
 }
+
+/********Custom CSS for Busy States******************/
+.disabledBackground {
+  background-color: #d8d8d8;
+  z-index: 50000;
+  opacity: 0.4;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}

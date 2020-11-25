@@ -31,6 +31,8 @@ import { FooterComponent } from './footer/footer.component';
 import { OtherInformationComponent } from './other-information/other-information.component';
 import { HeaderComponent } from './header/header.component';
 import {SignupComponent} from './signup/signup.component';
+import {LoadingBarHttpClientModule} from '@ngx-loading-bar/http-client';
+import {LoadingBarModule} from '@ngx-loading-bar/core';
 
 @NgModule({
   declarations: [
@@ -42,8 +44,7 @@ import {SignupComponent} from './signup/signup.component';
     MatCheckboxModule, MatRadioModule, MatSelectModule, MatDatepickerModule, MatTabsModule, MatMenuModule,
     MatIconModule, MatDialogModule, MatSidenavModule, MatSnackBarModule, MatExpansionModule, MatButtonModule,
     MatToolbarModule, MatListModule, MatStepperModule, MatTableModule, MatCardModule, MatDatepickerModule,
-    MatNativeDateModule,
-    AppRoutingModule
+    MatNativeDateModule, AppRoutingModule, LoadingBarHttpClientModule, LoadingBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
