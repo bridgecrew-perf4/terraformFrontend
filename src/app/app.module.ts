@@ -24,20 +24,24 @@ import {MatListModule} from '@angular/material/list';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatTableModule} from '@angular/material/table';
 import {MatNativeDateModule} from '@angular/material/core';
-import { AzureAuthenticationComponent } from './azure-authentication/azure-authentication.component';
+import {AzureAuthenticationComponent} from './azure-authentication/azure-authentication.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
-import { FooterComponent } from './footer/footer.component';
-import { OtherInformationComponent } from './other-information/other-information.component';
-import { HeaderComponent } from './header/header.component';
+import {FooterComponent} from './footer/footer.component';
+import {OtherInformationComponent} from './other-information/other-information.component';
+import {HeaderComponent} from './header/header.component';
 import {SignupComponent} from './signup/signup.component';
 import {LoadingBarHttpClientModule} from '@ngx-loading-bar/http-client';
 import {LoadingBarModule} from '@ngx-loading-bar/core';
+import {WordpressAuthenticationComponent} from './wordpress-authentication/wordpress-authentication.component';
+import {WordpressOtherInformationComponent} from './wordpress-other-information/wordpress-other-information.component';
+import {AzureDeploymentComponent} from './azure-deployment/azure-deployment.component';
+import { AzureLoginComponent } from './azure-login/azure-login.component';
 
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, AzureAuthenticationComponent, FooterComponent, OtherInformationComponent, HeaderComponent,
-    SignupComponent
+    SignupComponent, WordpressAuthenticationComponent, WordpressOtherInformationComponent, AzureDeploymentComponent, AzureLoginComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule, BrowserAnimationsModule, MatInputModule,

@@ -3,4 +3,5 @@ export class Authentication {
   clientID: string;
   clientSecret: string;
   tenantID: string;
+  type: string;
 }

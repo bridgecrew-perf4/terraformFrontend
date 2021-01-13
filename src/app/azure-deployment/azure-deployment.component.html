@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Authentication</title>
+</head>
+<body style="padding: 25px">
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <mat-label style="font-weight: bolder; font-size: 42px">
+            <b>Select Deployment</b>
+          </mat-label>
+        </div>
+      </div>
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"></div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 "></div>
+    <div class="text-center col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
+      <button style="width: 150px" type="button" mat-stroked-button color="primary" id="btnClear" class="mr-3 btnColorClass"
+              (click)="goWordpress()">Wordpress
+      </button>
+    </div>
+    <div class="text-center col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
+      <button style="width: 150px" type="button" mat-stroked-button class="btnColorClass" id="btnSave" color="primary" (click)="goAEM()">
+        AEM
+      </button>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 "></div>
+  </div>
+</div>
+</body>
+</html>

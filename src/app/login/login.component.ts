@@ -53,12 +53,10 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
       console.log(result);
       if (result.status == 200) {
         this.sharedService.isLoggedIn = true;
-        this.router.navigateByUrl('/azure/auth');
+        this.router.navigateByUrl('/azure/azurecli');
       } else {
         this.snackBar.openSnackBar(result.message, result.status);
       }
-    }, error => {
-    }, () => {
     });
   }
 }

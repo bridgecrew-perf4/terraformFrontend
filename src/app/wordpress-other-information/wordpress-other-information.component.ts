@@ -6,9 +6,9 @@ import {SnackBarService} from '../../services/snackBar.service';
 
 @Component({
   selector: 'app-other-information',
-  templateUrl: './other-information.component.html'
+  templateUrl: './wordpress-other-information.component.html'
 })
-export class OtherInformationComponent implements OnInit {
+export class WordpressOtherInformationComponent implements OnInit {
 
   ss: SecondScreen = new SecondScreen();
   rgLocData = [{code: 'Central US', label: 'Central US'}, {code: 'UAE Central', label: 'UAE Central'},
@@ -33,7 +33,7 @@ export class OtherInformationComponent implements OnInit {
   }
 
   postAzureSecond() {
-    this.ss.type = 'AEM';
+    this.ss.type = 'WP';
     this.azureTerraformService.postAzureSecond(this.ss).subscribe((result) => {
       console.log('File is saved');
     });

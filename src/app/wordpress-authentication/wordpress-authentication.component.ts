@@ -5,9 +5,9 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-azure-authentication',
-  templateUrl: './azure-authentication.component.html'
+  templateUrl: './wordpress-authentication.component.html'
 })
-export class AzureAuthenticationComponent implements OnInit {
+export class WordpressAuthenticationComponent implements OnInit {
 
   authentication: Authentication = new Authentication();
 
@@ -18,10 +18,10 @@ export class AzureAuthenticationComponent implements OnInit {
   }
 
   postAzureAuth() {
-    this.authentication.type = 'AEM';
+    this.authentication.type = 'WP';
     this.azureTerraformService.postAzureAuth(this.authentication).subscribe((result: any) => {
       if (result.status == 200) {
-        this.router.navigateByUrl('/azure/second');
+        this.router.navigateByUrl('/azure/wordpresssecond');
       }
       console.log(result);
     });

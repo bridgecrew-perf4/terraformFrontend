@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Azure CLI Login</title>
+</head>
+<body style="padding: 25px">
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <mat-label style="font-weight: bolder; font-size: 42px">
+            <b>Azure CLI Login</b>
+          </mat-label>
+        </div>
+      </div>
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      </div>
+    </div>
+  </div>
+  <div *ngIf="subscriptionInd==true">
+    <div class="row mt-5">
+      Select a Subscription
+    </div>
+    <br>
+    <div class="row mt-2 mb-2 mr-5">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div>
+          <ul class="list-group">
+            <li class="list-group-item"  *ngFor="let subs of subscriptions">
+              <input type="radio" [(ngModel)]="radioSelected" name="list_name" value="{{subs.id}}" (change)="onItemChange(subs.id)"/>
+              {{subs.name}} ( {{subs.id}} )
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-2 mb-2 mr-5">
+      <div class="col-xl-4=12 col-lg-12 col-md-12 col-sm-12 text-right">
+        <button type="button" mat-stroked-button color="primary" id="btnNext" class="mr-3 btnColorClass"
+                (click)="setSubscription()">OK
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="subscriptionInd==false">
+    <div class="row mt-5">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        {{message}} Or <a href="https://microsoft.com/devicelogin" target="_blank">Click Here To Open the link</a>
+      </div>
+    </div>
+    <br>
+    <div class="row mt-2 mb-2 mr-5">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        After Successful login Click Next
+      </div>
+    </div>
+    <div class="row mt-2 mb-2 mr-5">
+      <div class="col-xl-4=12 col-lg-12 col-md-12 col-sm-12 text-right">
+        <button type="button" mat-stroked-button color="primary" id="btnOk" class="mr-3 btnColorClass"
+                (click)="getSubscription()">Next
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

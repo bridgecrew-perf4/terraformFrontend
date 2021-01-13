@@ -9,4 +9,5 @@ export class SecondScreen {
   fileShareStorageAccountInfo: StorageAccountInformation = new StorageAccountInformation();
   // containerStorageAccountInfo: StorageAccountInformation = new StorageAccountInformation();
   sqlDatabaseInfo: SQLDatabaseInformation = new SQLDatabaseInformation();
+  type: string;
 }
