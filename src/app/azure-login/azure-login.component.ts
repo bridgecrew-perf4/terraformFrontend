@@ -12,7 +12,8 @@ export class AzureLoginComponent implements OnInit {
   constructor(public router: Router, public authService: AuthService) {
   }
 
-  message: string;
+  message;
+  code: string;
   subscriptionInd: boolean = false;
   radioSelected: string;
   subscriptions: AzureAuth[] = [];
@@ -22,7 +23,9 @@ export class AzureLoginComponent implements OnInit {
     this.authService.cliLogin().subscribe((result: any) => {
       console.log(result);
       if (result.status == 200) {
-        this.message = result.message;
+        this.message =  result.message.split(' ')
+        console.log(this.message[16])
+        this.code = this.message[16]
         // this.sharedService.isLoggedIn = true;
         // this.router.navigateByUrl('/azure/azurecli');
       } else {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Azure CLI Login</title>
+  <title>Service Principal Creation</title>
 </head>
 <body style="padding: 25px">
 <div class="container-fluid">
@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
           <mat-label style="font-weight: bolder; font-size: 42px">
-            <b>Azure CLI Login</b>
+            <b>Service Principal Creation</b>
           </mat-label>
         </div>
       </div>
@@ -22,22 +22,24 @@
   </div>
   <div *ngIf="subscriptionInd==true">
     <div class="row mt-5">
-      Select a Subscription
+      <h3>Select a Subscription</h3>
     </div>
     <br>
     <div class="row mt-2 mb-2 mr-5">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
         <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Subscription Name</b> &nbsp;&nbsp;&nbsp; <b>Subscription Id</b>
           <ul class="list-group">
-            <li class="list-group-item"  *ngFor="let subs of subscriptions">
-              <input type="radio" [(ngModel)]="radioSelected" name="list_name" value="{{subs.id}}" (change)="onItemChange(subs.id)"/>
+            <li class="list-group-item" *ngFor="let subs of subscriptions">
+              <input type="radio" [(ngModel)]="radioSelected" name="list_name" value="{{subs.id}}"
+                     (change)="onItemChange(subs.id)"/>
               {{subs.name}} ( {{subs.id}} )
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="row mt-2 mb-2 mr-5">
+    <div class="row mt-2 mb-2">
       <div class="col-xl-4=12 col-lg-12 col-md-12 col-sm-12 text-right">
         <button type="button" mat-stroked-button color="primary" id="btnNext" class="mr-3 btnColorClass"
                 (click)="setSubscription()">OK
@@ -48,17 +50,14 @@
 
   <div *ngIf="subscriptionInd==false">
     <div class="row mt-5">
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-        {{message}} Or <a href="https://microsoft.com/devicelogin" target="_blank">Click Here To Open the link</a>
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center" style="border: 1px solid #A6C238; border-radius: 10px">
+        <p class="mt-2">In order to authenticate the Platform with the Azure Environment, Service Principal account creation is
+          required. Kindly open the <a href="https://microsoft.com/devicelogin" target="_blank">https://microsoft.com/devicelogin</a>
+          and paste the code: <b>{{code}}</b> After successful login close the link tab and Click on Next.</p>
       </div>
     </div>
-    <br>
-    <div class="row mt-2 mb-2 mr-5">
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-        After Successful login Click Next
-      </div>
-    </div>
-    <div class="row mt-2 mb-2 mr-5">
+
+    <div class="row mt-2 mb-2">
       <div class="col-xl-4=12 col-lg-12 col-md-12 col-sm-12 text-right">
         <button type="button" mat-stroked-button color="primary" id="btnOk" class="mr-3 btnColorClass"
                 (click)="getSubscription()">Next
@@ -69,3 +68,4 @@
 </div>
 </body>
 </html>
+

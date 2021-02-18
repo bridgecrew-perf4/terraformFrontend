@@ -23,8 +23,11 @@ export class WordpressOtherInformationComponent implements OnInit {
     {code: 'Hyperscale', label: 'Hyperscale'}, {code: 'PremiumRS', label: 'PremiumRS'}, {code: 'Standard', label: 'Standard'},
     {code: 'Stretch', label: 'Stretch'}, {code: 'System', label: 'System'}, {code: 'System2 ', label: 'System2'},
     {code: 'Web ', label: 'Web'}];
-  dbCollationData = [{code: 'SQL_Latin1_General_CP1_CI_AS ', label: 'SQL_Latin1_General_CP1_CI_AS '}];
+  dbCollationData = [{code: 'SQL_Latin1_General_CP1_CI_AS', label: 'SQL_Latin1_General_CP1_CI_AS '}];
   dbVersionData = [{code: '12', label: '12'}];
+  accountTier = [{code: 'Standard', label: 'Standard '}];
+  storageAccountReplicationType = [{code: 'GRS', label: 'GRS'}];
+  serviceObjectiveName = [{code: 'Basic', label: 'Basic'}];
 
   constructor(private azureTerraformService: AzureTerraformService, private snackBar: SnackBarService) {
   }
@@ -40,13 +43,13 @@ export class WordpressOtherInformationComponent implements OnInit {
   }
 
   postDeploy() {
-    this.azureTerraformService.postDeploy().subscribe((result: any) => {
+    this.azureTerraformService.postDeploy('WP').subscribe((result: any) => {
       console.log(result);
       if (result.status == 200) {
         this.snackBar.openSnackBar(result.message, result.status);
-      } else {
+	} /*else {
         this.snackBar.openSnackBar('Error in the command ' + result.message.error.cmd, result.status);
-      }
+	}*/
     });
   }
 }

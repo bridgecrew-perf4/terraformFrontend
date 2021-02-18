@@ -147,7 +147,11 @@
         <mat-label>
           Account Tier
         </mat-label>
-        <input matInput [(ngModel)]='ss.fileShareStorageAccountInfo.accountTier' name="accountTier" id="accountTier">
+        <mat-select [(ngModel)]='ss.fileShareStorageAccountInfo.accountTier' name="accountTier" id="accountTier">
+          <mat-option *ngFor="let data of accountTier" [value]="data.code">
+            {{data.label}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
@@ -155,8 +159,12 @@
         <mat-label>
           Storage Account Replication Type
         </mat-label>
-        <input matInput [(ngModel)]='ss.fileShareStorageAccountInfo.storageAccountReplicationType'
-               name="storageAccountReplicationType" id="storageAccountReplicationType">
+        <mat-select [(ngModel)]='ss.fileShareStorageAccountInfo.storageAccountReplicationType'
+                    name="storageAccountReplicationType" id="storageAccountReplicationType">
+          <mat-option *ngFor="let data of storageAccountReplicationType" [value]="data.code">
+            {{data.label}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
@@ -274,8 +282,11 @@
         <mat-label>
           Service Objective Name
         </mat-label>
-        <input matInput [(ngModel)]='ss.sqlDatabaseInfo.serviceObjectiveName' name="serviceObjectiveName"
-               id="serviceObjectiveName">
+        <mat-select [(ngModel)]='ss.sqlDatabaseInfo.serviceObjectiveName' name="serviceObjectiveName"
+                    id="serviceObjectiveName">
+          <mat-option *ngFor="let data of serviceObjectiveName" [value]="data.code">
+            {{data.label}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
   </div>
@@ -304,7 +315,7 @@
         <mat-label>
           SQL Password
         </mat-label>
-        <input matInput [(ngModel)]='ss.sqlDatabaseInfo.sqlPassword' name="sqlPassword" id="sqlPassword">
+        <input  type="password"  matInput [(ngModel)]='ss.sqlDatabaseInfo.sqlPassword' name="sqlPassword" id="sqlPassword">
       </mat-form-field>
     </div>
     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">

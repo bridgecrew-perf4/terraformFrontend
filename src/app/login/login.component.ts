@@ -50,13 +50,14 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
 
   login(signUpForm: NgForm) {
     this.userService.loginUser(signUpForm.value).subscribe((result: any) => {
-      console.log(result);
-      if (result.status == 200) {
+    console.log(result);
+    console.log("123412341234");
+    //      if (result.status == 200) {
         this.sharedService.isLoggedIn = true;
         this.router.navigateByUrl('/azure/azurecli');
-      } else {
-        this.snackBar.openSnackBar(result.message, result.status);
-      }
+	//  } else {
+	// this.snackBar.openSnackBar(result.message, result.status);
+	//  }
     });
   }
 }

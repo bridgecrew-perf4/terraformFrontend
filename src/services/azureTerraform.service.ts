@@ -24,7 +24,7 @@ export class AzureTerraformService {
     return this.http.post(environment.apiBaseUrl + '/azure/second', {secondScreen});
   }
 
-  postDeploy() {
-    return this.http.post(environment.apiBaseUrl + '/azure/deploy','123');
+  postDeploy(deployType: string) {
+    return this.http.post(environment.apiBaseUrl + '/azure/deploy', {deployType});
   }
 }
